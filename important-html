@@ -4,6 +4,7 @@
  HTML INDEX
 ==========================
 1.Tab linking
+2.logo change with scroll
 -----------------------------------------------------
 */
 /*
@@ -53,4 +54,30 @@ Add this js:
     history.replaceState(null, null, newUrl);
   });
 });
+</script>
+
+/*
+-------------------------------------
+2.logo change with scroll
+-------------------------------------
+*/
+/* --- HTML  ---- */
+<a class="navbar-brand visible-xs" href="index.php">
+   <img src="img/logo.png" class="img-responsive">
+</a>
+<a class="navbar-brand hidden-xs" href="index.php">
+  <img src="img/logo-footer.png" class="main-logo transition img-responsive">
+</a>
+
+/* --- js--- */
+<script type="text/javascript">
+   $(window).scroll(function(){
+     var wscroll = $(this).scrollTop();
+     if(wscroll > 10){
+      $('.main-logo').attr("src", "img/logo.png");
+     }
+     else{
+        $('.main-logo').attr("src", "img/logo-footer.png");
+     }
+   });
 </script>
