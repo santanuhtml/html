@@ -1,0 +1,56 @@
+
+/*
+-----------------------------------------------------
+ HTML INDEX
+==========================
+1.Tab linking
+-----------------------------------------------------
+*/
+/*
+-------------------------------------
+1.Tab linking
+-------------------------------------
+*/
+This is the link:
+[code]
+
+<a href="work.php#socialmedia"><div class="upper-box">
+
+redirect to this tab link where page name is => 'work.php'
+[code]
+
+<li data-filter="1" class="button1"><a href="#logo">Logo Design</a></li> 
+<li data-filter="2" class="button1"><a href="#stationary">Stationary</a></li>
+<li data-filter="3" class="button1"><a href="#packagingdesign">Packaging Design</a></li>
+<li data-filter="4" class="button1"><a href="#socialmedia">Social Media</a></li>
+
+Add this js:
+[code]
+
+<script>    
+    jQuery(document).ready(() => {
+  let url = location.href.replace(/\/$/, "");
+
+  if (location.hash) {
+    const hash = url.split("#");
+    jQuery('#myTab a[href="#'+hash[1]+'"]').tab("show");
+    url = location.href.replace(/\/#/, "#");
+    history.replaceState(null, null, url);
+    setTimeout(() => {
+      jQuery(window).scrollTop(0);
+    }, 400);
+  }
+  
+  jQuery('a[data-toggle="tab"]').on("click", function() {
+    let newUrl;
+    const hash = jQuery(this).attr("href");
+    if(hash == "#home") {
+      newUrl = url.split("#")[0];
+    } else {
+      newUrl = url.split("#")[0] + hash;
+    }
+    newUrl += "/";
+    history.replaceState(null, null, newUrl);
+  });
+});
+</script>
