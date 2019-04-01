@@ -5,6 +5,7 @@
 ==========================
 1.Tab linking
 2.logo change with scroll
+3.Forcing to download PDF
 -----------------------------------------------------
 */
 /*
@@ -81,3 +82,15 @@ Add this js:
      }
    });
 </script>
+
+/*
+-------------------------------------
+3.Forcing to download PDF
+-------------------------------------
+*/
+ADD THIS CODE in .htaccess after "# END WordPress"
+
+<Files *.pdf>
+    ForceType application/octet-stream
+    Header set Content-Disposition attachment
+</Files>
