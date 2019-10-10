@@ -6,6 +6,7 @@
 1.Tab linking
 2.logo change with scroll
 3.Forcing to download PDF
+4.Clickable (linking) toplevel navbar links with dropdowns
 -----------------------------------------------------
 */
 /*
@@ -94,3 +95,15 @@ ADD THIS CODE in .htaccess after "# END WordPress"
     ForceType application/octet-stream
     Header set Content-Disposition attachment
 </Files>
+
+/*
+-------------------------------------
+4.Clickable (linking) toplevel navbar links with dropdowns
+-------------------------------------
+*/
+
+ $(document).ready(function(){
+		  $('.navbar .dropdown > a').click(function(){
+		location.href = this.href;
+	  });
+	});
