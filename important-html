@@ -8,6 +8,7 @@
 3.Forcing to download PDF
 4.Clickable (linking) toplevel navbar links with dropdowns
 5.After scroll navbar fixed top
+6.on click background image change
 -----------------------------------------------------
 */
 /*
@@ -154,4 +155,39 @@ $(document).ready(function() {
         }
     });			
 });
-	
+
+
+/*
+-------------------------------------
+6.on click background image change
+-------------------------------------
+*/
+/* --- HTML  ---- */
+<div class="container">
+  <div class="row">
+    <div id="myDiv" class="col-md-6" style="background-image:url('https://via.placeholder.com/600x350/ddd'); height:250px;"> 
+    </div>
+    <div class="col-md-6">
+      <div class="basic-padding">
+        <h4 id="myLink">1</h4>
+        <h4 id="myLink2">2</h4>
+        <h4 id="myLink3">3</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+/* --- JS  ---- */
+<script type="text/javascript">
+$("#myLink").click(function() { 
+$("#myDiv").css("backgroundImage", "url(https://via.placeholder.com/600x350/ddd)");
+});
+$("#myLink2").click(function() { 
+$("#myDiv").css("backgroundImage", "url(https://via.placeholder.com/600x350/ccc)");
+});
+$("#myLink3").click(function() { 
+$("#myDiv").css("backgroundImage", "url(https://via.placeholder.com/600x350/f1f1f1)");
+});
+</script>
+
+
