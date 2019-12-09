@@ -9,6 +9,7 @@
 4.Clickable (linking) toplevel navbar links with dropdowns
 5.After scroll navbar fixed top
 6.on click background image change
+7.Responsive menu close on click
 -----------------------------------------------------
 */
 /*
@@ -190,4 +191,17 @@ $("#myDiv").css("backgroundImage", "url(https://via.placeholder.com/600x350/f1f1
 });
 </script>
 
-
+/*
+-------------------------------------
+7.Responsive menu close on click
+-------------------------------------
+*/
+/* --- js  ---- */
+$(function(){ 
+     var navMain = $(".navbar-collapse"); // avoid dependency on #id
+     // "a:not([data-toggle])" - to avoid issues caused
+     // when you have dropdown inside navbar
+     navMain.on("click", "a:not([data-toggle])", null, function () {
+         navMain.collapse('hide');
+     });
+ });
