@@ -9,7 +9,7 @@
 4.Clickable (linking) toplevel navbar links with dropdowns
 5.After scroll navbar fixed top
 6.on click background image change
-7.Responsive menu close on click
+7.Single page menu close on click any menu option
 -----------------------------------------------------
 */
 /*
@@ -193,7 +193,7 @@ $("#myDiv").css("backgroundImage", "url(https://via.placeholder.com/600x350/f1f1
 
 /*
 -------------------------------------
-7.Responsive menu close on click
+7.Single page menu close on click any menu option
 -------------------------------------
 */
 /* --- js  ---- */
